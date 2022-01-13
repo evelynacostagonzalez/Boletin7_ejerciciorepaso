@@ -76,11 +76,11 @@ public class Cubo {
     /**
      * método que comprueba que el contenido actual no será mayor a la capacidad máxima y si no lo es, la sumará.
      * precondición: litro > 0
-     * @param litro
+     * @param litros
      */
 
-    public void llenarCubo (int litro) {
-         if ( capacidadMaxima==contenidoActual){
+    public void llenarCubo (int litros) {
+         if ( litros > capacidadMaxima - contenidoActual){
              System.out.println("El cubo está lleno");
         }
          else if (capacidadMaxima < contenidoActual) {
