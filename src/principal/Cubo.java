@@ -1,13 +1,21 @@
+package principal;
+
 public class Cubo {
 
-        private String material, asa, color;
+        private String material, color;
+        boolean asa;
         private double capacidadMaxima;
         private double contenidoActual;
 
         public Cubo() {
+            this.material="plastico";
+            this.asa=false;
+            this.color="negro";
+            this.capacidadMaxima=10;
+            this.contenidoActual=0;
 
         }
-        public Cubo (String material, String asa, String color, double capacidadMaxima, double contenidoActual) {
+        public Cubo (String material, boolean asa, String color, double capacidadMaxima, double contenidoActual) {
 
             this.material=material;
             this.asa=asa;
@@ -20,7 +28,7 @@ public class Cubo {
             return material;
         }
 
-        public String getAsa(){
+        public boolean isAsa(){
             return asa;
         }
 
@@ -40,7 +48,7 @@ public class Cubo {
             this.material=material;
         }
 
-        public void setAsa (String asa){
+        public void setAsa (boolean asa){
             this.asa=asa;
         }
 
@@ -58,10 +66,25 @@ public class Cubo {
 
         public Cubo (Cubo cubo) {
             this.material=cubo.getMaterial();
-            this.asa=cubo.getAsa();
+            this.asa=cubo.isAsa();
             this.color=cubo.getColor();
             this.capacidadMaxima=cubo.getCapacidadMaxima();
             this.contenidoActual=cubo.getContenidoActual();
         }
+  //métodos
 
+    /**
+     * método que comprueba que el contenido actual no será mayor a la capacidad máxima y si no lo es, la sumará.
+     * precondición: litro > 0
+     * @param litro
+     */
+
+    public void llenarCubo (int litro) {
+         if ( capacidadMaxima==contenidoActual){
+             System.out.println("El cubo está lleno");
+        }
+         else if (capacidadMaxima < contenidoActual) {
+            System.out.println("Aun queda espacio en el cubo");
+        }
     }
+}
